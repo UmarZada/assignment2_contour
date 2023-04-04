@@ -1,0 +1,96 @@
+*
+{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body
+    {
+        background-color: #ffff;
+    }
+.container{
+    background-color: aqua;
+    height: 592px;
+    justify-content: center;
+    text-align: center;
+}
+.image img {
+    border: 5px;
+    border-radius: 50%;
+    border-color:olive;
+    height: 120px;
+    width: 120px;
+
+    margin-top: 5%;
+}
+.email input{
+    font-family: sans-serif;
+    height: 2em;
+    width: 20em;
+    border-width: -10em;
+    margin-top: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+}
+.email input:hover{
+    transition: .5s ease-out;
+    box-shadow: 0px 20px 100px  -15px black;
+    margin: 5px;
+}
+.password input{
+    font-family: sans-serif;
+    height: 2em;
+    width: 20em;
+    border-width: -10em;
+    margin-top: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+}
+.password input:hover{
+    transition: .5s ease-out;
+    box-shadow: 0px 20px 100px  -15px black;
+    margin: 5px;
+}
+.btn{
+    height: 2em;
+    width: 7em;
+    margin-top: 10px;
+    background-color: blue;
+    color: white;
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+    border-radius: .5em;
+    margin-left: 30px;
+}
+.btn:hover{
+    background-color:gray;
+    transition: .5s ease-out;
+    box-shadow: 0px 20px 100px -15px black;
+
+}
+
+.check{
+    margin-right: 150px;
+    margin-top: 20px;
+}
+.fpass{
+    color: black;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: small;
+}
+.acc{
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+div h1{
+    font-family: sans-serif;
+    color: orange;
+    font-size: x-large;
+}
