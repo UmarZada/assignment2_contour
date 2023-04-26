@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Select Your Country Here</h2>
+        <select name="" id="country" onchange="populate(this.id,'cities')">
+            <option value="" selected disabled>Select Country Here...</option>
+            <option value="pakistan">pakistan</option>
+            <option value="japan">japan</option>
+
+        </select>
+    </div>
+    <div>
+        <h2>Select Your City Here</h2>
+        <select name="" id="cities" onchange="getcities(cities.value)">
+            <option value="" selected disabled>Select City here...</option>
+        </select>
+    </div>
+    <div id="res" >
+    
+    </div>
+
+
+    <script>
+        function populate(country,city){
+            let countries =document.getElementById(country);
+            let cities = document.getElementById(city);
+            
+            if(countries.value == "pakistan"){
+                var array =['|','lahore|Lahore','islamabad|Islamabad','peshawar|Peshawar','rawalpindi|Rawalpindi'];
+            }
+            else if(countries.value == "japan"){
+                var array =['|','kyoto|Kyoto','osaka|Osaka','kobe|Kobe','tokyo|Tokyo',]
+            }
+            cities.options.length=0;
+            for(var option in array){
+                var cut = array[option].split("|");
+                var newoption = document.createElement("option");
+                newoption.value= cut[0];
+                newoption.innerHTML=cut[1];
+                cities.options.add(newoption);
+            }
+        }
+        function getcities(props){
+            fetch("https://api.openweathermap.org/data/2.5/weather?q="+props+"&appid=cd0aab3ba61e4af27742fa6aa6fd4cdd").then((response)=>response.json()).then((data)=>{
+                 const cel=data.main.temp-273.15;
+                 
+                 const str="<h1> weather of "+props+" is : "+parseInt(cel)+" &#x2103;</h1>";
+                 
+                 document.getElementById('res').innerHTML= str;
+            
+            
+            
+            }).catch((error)=>console.log(error));
+                    }
+    
+    </script>
+</body>
+</html>
